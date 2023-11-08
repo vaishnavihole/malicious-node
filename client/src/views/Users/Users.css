@@ -1,0 +1,45 @@
+.user-cards {
+    display: flex;
+    flex-wrap: wrap; 
+  }
+  
+  .column {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 250px;
+  }
+  
+  .verified {
+    background-color: lightgreen;
+  }
+  
+  .unverified {
+    background-color: lightcoral;
+  }
+  
+  .user-card {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%; 
+    box-sizing: border-box; 
+  }
+  
+  h4 {
+    margin: 0;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .column {
+      flex: 100%; 
+      margin: 10px 0;
+    }
+  }

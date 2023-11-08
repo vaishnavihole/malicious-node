@@ -1,0 +1,29 @@
+.homepage-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.feature-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    max-width: 300px;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.feature-card h2 {
+    font-size: 20px;
+}
+
+.feature-card p {
+    font-size: 16px;
+}
