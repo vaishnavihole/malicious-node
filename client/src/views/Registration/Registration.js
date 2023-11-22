@@ -96,7 +96,7 @@ function Registration() {
               id="password"
               name="password"
               value={password}
-              placeholder='password'
+              placeholder='Enter password'
               required
               className="form-control"
               onChange={(e) => {

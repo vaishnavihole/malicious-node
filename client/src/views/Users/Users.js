@@ -1,20 +1,23 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './Users.css'
 import Navbar from '../../component/Navbar/Navbar';
 import Footer from '../../component/Footer/Footer';
-
-const usersData = [
-  { id: 1, name: 'User 1', email: 'user1@example.com', verified: true },
-  { id: 2, name: 'User 2', email: 'user2@example.com', verified: false },
-  { id: 3, name: 'User 3', email: 'user3@example.com', verified: true },
-  { id: 1, name: 'User 1', email: 'user1@example.com', verified: true },
-  { id: 2, name: 'User 2', email: 'user2@example.com', verified: false },
-  { id: 3, name: 'User 3', email: 'user3@example.com', verified: true },
-];
+import axios from 'axios';
 
 function Users() {
-  const verifiedUsers = usersData.filter((user) => user.verified);
-  const unverifiedUsers = usersData.filter((user) => !user.verified);
+  const [verifiedUsers, setVerifiedUsers] = useState([]);
+  const [unverifiedUsers, setUnverifiedUsers] = useState([]);
+
+  const loadUsers = async () =>{
+    const {data} = await axios.get(`/users-with-verification`)
+
+    setVerifiedUsers(data?.data?.verifiedUsers);
+    setUnverifiedUsers(data?.data?.nonVerifiedUsers)
+  }
+
+  useEffect(() =>{
+    loadUsers();
+  }, []);
 
   return (
 <>
